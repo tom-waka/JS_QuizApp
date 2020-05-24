@@ -2,7 +2,7 @@
 
 {
   const question = document.getElementById('question');
-  const choises = document.getElementById('choises');
+  const choices = document.getElementById('choices');
   const btn = document.getElementById('btn');
   
   const quizSet = [
@@ -32,23 +32,43 @@
     }else{
       li.classList.add('wrong');
     }
+
+    btn.classList.remove('disabled');
   }
 
   function setQuiz() {
     isAnswered = false;
     question.textContent = quizSet[currentNum].q;
 
-    const shuffledChoises = shuffle([...quizSet[currentNum].c]);
-    shuffledChoises.forEach(choise => {
+    while (choices.firstChild) {
+      choices.removeChild(choices.firstChild);
+    }
+
+    const shuffledChoices = shuffle([...quizSet[currentNum].c]);
+    shuffledChoices.forEach(choice => {
       const li = document.createElement('li');
-      li.textContent = choise;
+      li.textContent = choice;
       li.addEventListener('click', () => {
         checkAnswer(li);
       });
-      choises.appendChild(li);
+      choices.appendChild(li);
     });
+
+    if (currentNum === quizSet.length - 1) {
+      btn.textContent = '結果を見る';
+    }
   }
 
   setQuiz();
+
+  btn.addEventListener('click', () =>{
+    if (btn.classList.contains('disabled')) {
+      return;
+    }
+
+    btn.classList.add('disabled');
+    currentNum++;
+    setQuiz();
+  })
 
 }
