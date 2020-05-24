@@ -13,9 +13,19 @@
 
   let currentNum = 0;
 
+  function shuffle(arr) {
+    for (let i = arr.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [arr[j], arr[i]] = [arr[i], arr[j]];
+    }
+    return arr;
+  }
+
+  const shuffledChoises = shuffle([...quizSet[currentNum].c]);
+
   question.textContent = quizSet[currentNum].q;
 
-  quizSet[currentNum].c.forEach(choise => {
+  shuffledChoises.forEach(choise => {
     const li = document.createElement('li');
     li.textContent = choise;
     choises.appendChild(li);
