@@ -1,22 +1,31 @@
 body{
-  background: #efdec1;
-  font-size: 1rem;
+  background: #caebff;
+  font-size: 1.2rem;
   font-family: Verdana, sans-serif;
 }
 
 .container{
   width: 25rem;
-  margin: 2rem auto;
+  margin: 5rem auto;
   background-color: white;
   border-radius: 0.5rem;
   padding: 2rem;
   position: relative;
+  box-shadow: 0.3rem 0.3rem 1rem #00000062;
 }
 
 #question{
   margin-top: 0;
   margin-bottom: 1rem;
+}
+
+#q_text{
+  text-align: center;
+  font-size: 1.5rem;
   font-weight: bold;
+  padding: 2rem 0;
+  border-radius: 0.5rem;
+  background-color: #ffbb824a;
 }
 
 #choices{
@@ -24,13 +33,14 @@ body{
   padding: 0;
   margin-bottom: 1rem;
   li {
-    border: 1px solid #ccc;
+    border: 0.2rem solid #b7d9ff;
     border-radius: 0.5rem;
     padding: 0.8rem;
     margin-bottom: 0.8rem;
+    font-weight: bold;
     cursor: pointer;
     &:hover{
-      background-color: rgb(231, 231, 231);
+      background-color: #b7d9ff5d;
     }
   }
   .correct{
