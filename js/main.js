@@ -2,15 +2,16 @@
 
 {
   const question = document.getElementById('question');
+  const q_text = document.getElementById('q_text');
   const choices = document.getElementById('choices');
   const btn = document.getElementById('btn');
   const result = document.getElementById('result');
   const scoreLabel = document.querySelector('#result > p');
   
   const quizSet = shuffle([
-    {q: 'what is A?', c: ['A0','A1','A2']},
-    {q: 'what is B?', c: ['B0','B1','B2']},
-    {q: 'what is C?', c: ['C0','C1','C2']},
+    {q: '【？】に入る言葉はどれでしょう。', q_text: 'サンタ　砂　那覇　【？】' , c: ['銃','剣','槍']},
+    {q: '【？】に入る数字はどれでしょう。', q_text: ' ２　→→　４　→↓ 【？】' , c: ['9','6','3']},
+    {q: 'この3つの単語はある共通点を持っています。\n同じ共通点をもった単語はどれでしょう。', q_text: '質　　鳩　　地図' , c: ['琴','笛','鈴']},
   ]);
 
   let currentNum = 0;
@@ -42,7 +43,8 @@
 
   function setQuiz() {
     isAnswered = false;
-    question.textContent = quizSet[currentNum].q;
+    question.innerText = quizSet[currentNum].q;
+    q_text.textContent = quizSet[currentNum].q_text;
 
     while (choices.firstChild) {
       choices.removeChild(choices.firstChild);
