@@ -80,7 +80,26 @@ body{
   }
 }
 
-#result{
+#tips{
+  display: flex;
+  justify-content: space-around;
+  #hint_btn, #explanation_btn{
+    padding: 0.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 0.5rem;
+    color: white;
+    background-color: #0cab18;
+    box-shadow: 0 0.5rem 0 #0c9018;
+    cursor: pointer;
+    &.disabled{
+      background-color: #ccc;
+      box-shadow: 0 0.5rem 0 #bbb;
+      opacity: 0.7;
+    }
+  }
+}
+
+#result, #hint, #explanation{
   position: absolute;
   width: 18rem;
   background-color: white;
@@ -94,13 +113,20 @@ body{
   text-align: center;
   transition: 0.5s;
   &.hidden{
-    transform: translateY(-30rem);
+    transform: translateY(-50rem);
   }
   p{
-    font-size: 1.5rem;
+    font-size: 1.0rem;
   }
   a{
     display: block;
     text-decoration: none;
+  }
+  .close{
+    color: white;
+    background-color: #3498db;
+    margin-top: 2rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
   }
 }
