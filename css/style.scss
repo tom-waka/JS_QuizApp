@@ -19,7 +19,7 @@ body{
   margin-bottom: 1rem;
 }
 
-#q_text{
+#qText{
   text-align: center;
   font-size: 1.5rem;
   font-weight: bold;
@@ -83,7 +83,7 @@ body{
 #tips{
   display: flex;
   justify-content: space-around;
-  #hint_btn, #explanation_btn{
+  #hintBtn, #expBtn{
     padding: 0.5rem;
     margin-bottom: 1.5rem;
     border-radius: 0.5rem;
